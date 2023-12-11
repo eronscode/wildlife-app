@@ -16,7 +16,15 @@ const decodeSlug = (slug: string) => {
   return decodedWords.join(' ');
 };
 
-export const slugUtils = {
+function convertToTitleCase(str: string) {
+  return str
+    .split('_')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+export const stringUtils = {
   convertToSlug,
   decodeSlug,
+  convertToTitleCase,
 };
