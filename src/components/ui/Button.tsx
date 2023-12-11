@@ -6,7 +6,6 @@ export type ButtonSize = 'sm' | 'DEFAULT';
 
 export interface ButtonProps {
   label: ReactNode;
-  icon?: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   type?: 'button' | 'submit';
@@ -19,7 +18,6 @@ export interface ButtonProps {
 export const Button: FunctionComponent<ButtonProps> = ({
   label,
   variant,
-  icon: Icon,
   type = 'button',
   size,
   isDisabled,
@@ -39,7 +37,6 @@ export const Button: FunctionComponent<ButtonProps> = ({
       disabled={isButtonDisabled}
       {...props}
     >
-      {Icon && Icon}
       {isLoading ? 'Loading...' : label}
     </button>
   );
