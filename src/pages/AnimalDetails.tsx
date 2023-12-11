@@ -22,7 +22,7 @@ export const AnimalDetails = () => {
   const name = decodeSlug(String(params?.name) ?? '');
 
   const { searchQuery, toggleFavourites, handleRating, handlePreference } = useSearchAnimals(name);
-  const { data, isLoading } = searchQuery;
+  const { data, isLoading, isError } = searchQuery;
 
   const animalDetail = data?.find((animal) => animal.name === name);
 
@@ -30,11 +30,17 @@ export const AnimalDetails = () => {
     return <p className="text-center text-5xl mt-10">Loading...</p>;
   }
 
+  if (isError) {
+    return (
+      <p className="text-center text-red-500 text-3xl mt-7">
+        Some error occured while trying to load data
+      </p>
+    );
+  }
+
   if (!animalDetail) {
     return null;
   }
-
-  console.log({ animalDetail });
 
   return (
     <>
