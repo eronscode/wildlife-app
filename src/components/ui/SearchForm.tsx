@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, KeyboardEvent, useState } from 'react';
 import { Input } from './Input';
 import { Button } from './Button';
 
@@ -18,6 +18,13 @@ export const SearchForm: FunctionComponent<SearchFormProps> = ({ onSearch, isLoa
     onSearch(value.toLowerCase());
   };
 
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      handleSearch();
+    }
+  };
+
   return (
     <div className="flex">
       <Input
@@ -26,6 +33,7 @@ export const SearchForm: FunctionComponent<SearchFormProps> = ({ onSearch, isLoa
         disabled={isLoading}
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={handleKeyDown}
         className="rounded-none"
       />
       <Button
