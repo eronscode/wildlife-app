@@ -155,17 +155,36 @@ The following are some technical things i'd do if i had more time on the project
 3. **SEO** - Implementing SEO (Search Engine Optimization) is crucial to enhance visibility across search engines, ensuring that users can easily discover and access information about various animals. By optimizing content with relevant keywords, meta tags, and structured data, the app can rank higher in search results, attracting more organic traffic and increasing its online presence. I'd use the `react-helmet` as it allows for dynamic management of the document head in React applications.
 
 
-4. **Documentation** - Documentation is very important in projects as it helps others understand what has been done in the project. I'd write a very organized documentation if i had more time in the project.
+4. **Accessibilty** - Improving accessibility in the app will enhance inclusivity by ensuring that users with disabilities or diverse needs can easily navigate, interact, and comprehend the content. Incorporating accessible design elements, such as alt text for images or keyboard navigation, not only complies with standards but also broadens the app's reach, making it usable by a wider audience.
 
 
-5. **API connection** - Integrating with a live API enhances the application's interactivity and scalability. Presently, our data caching relies on local storage, which has a limited capacity of approximately 5MB. This limitation hinders scalability in the long term. Transitioning to a backend service for managing tasks such as adding/listing animals to/from favorites, rating, and expressing preference in liking/disliking animals offers improved scalability and maintainability.
+5. **Documentation** - Documentation is very important in projects as it helps others understand what has been done in the project. I'd write a very organized documentation if i had more time in the project.
 
 
-6. **Deployment:** Implementing CI/CD pipeline and continously deploy to a hosting server. CI/CD pipelines is important because it helps to minimize human error and maintain a consistent process for how software is released.
+6. **API connection** - Integrating with a live API enhances the application's interactivity and scalability. Presently, our data caching relies on local storage, which has a limited capacity of approximately 5MB. This limitation hinders scalability in the long term. Transitioning to a backend service for managing tasks such as adding/listing animals to/from favorites, rating, and expressing preference in liking/disliking animals offers improved scalability and maintainability.
+
+
+7. **Deployment:** Implementing CI/CD pipeline and continously deploy to a hosting server. CI/CD pipelines is important because it helps to minimize human error and maintain a consistent process for how software is released.
 
 
 ### Business Improvements
 Although this is a mini app but being that i'm not just only a smart engineer but also business oriented, here are some proposed features that could elevate this application:
 
-1. Enhanced User Engagement: Implementing a rewards system to incentivize user interaction—granting free coins for actions like liking, disliking, or rating animals. Accumulated coins could be exchanged for a complimentary zoo visit, fostering continuous user engagement and loyalty to the application. This strategic feature aims to sustain user interest and interaction with the app over time.
+1. **Enhanced User Engagement**: Implementing a rewards system to incentivize user interaction—granting free coins for actions like liking, disliking, or rating animals. Accumulated coins could be exchanged for a complimentary zoo visit, fostering continuous user engagement and loyalty to the application. This strategic feature aims to sustain user interest and interaction with the app over time.
 
+
+## Limitations
+
+1. **Local Storage Capacity**: Relying solely on local storage for caching data could become restrictive due to its limited capacity, typically around 5MB. This limitation might hinder the app's ability to efficiently manage larger datasets or more complex functionalities.
+
+
+2. **Scalability Issues**: As the application grows and handles increased user traffic, scaling with local storage might pose challenges. It might struggle to manage larger volumes of data or concurrent user interactions, impacting performance.
+
+
+3. **SEO and Metadata Management**: Lack of proper metadata handling or SEO strategies within the app could affect its visibility in search engines, potentially reducing discoverability and traffic.
+
+
+4. **Limited Backend Functionality**: If the app operates without a robust backend, it might be limited in functionalities such as user authentication, real-time data updates, or handling complex business logic, thus impacting its capabilities.
+
+
+5. **Security Concerns**: Not having comprehensive security measures or proper validation mechanisms in place might expose the app to vulnerabilities like data breaches or unauthorized access.
