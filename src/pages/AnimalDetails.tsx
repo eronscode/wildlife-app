@@ -13,6 +13,7 @@ import { Routes } from '@/config/routes';
 import { useSearchAnimals } from '@/hooks/useSearchAnimals';
 import { Preferences } from '@/enums';
 import { stringUtils } from '@/utils/formatString';
+import { Spinner } from '@/components/ui/Spinner';
 
 export const AnimalDetails = () => {
   const params = useParams();
@@ -27,7 +28,7 @@ export const AnimalDetails = () => {
   const animalDetail = data?.find((animal) => animal.name === name);
 
   if (isLoading) {
-    return <p className="text-center text-5xl mt-10">Loading...</p>;
+    return <Spinner variant="dot-spin" position="fullscreen" />;
   }
 
   if (isError) {
@@ -81,7 +82,7 @@ export const AnimalDetails = () => {
                 <HeartSVG
                   className={classNames('w-5', { 'fill-red-600 ': animalDetail.isFavourite })}
                 />
-                {animalDetail.isFavourite ? 'Remove from favourite' : 'Add to favourite'}
+                {animalDetail.isFavourite ? 'Remove from favourites' : 'Add to favourites'}
               </span>
             }
             variant={animalDetail.isFavourite ? 'primary' : 'secondary'}
