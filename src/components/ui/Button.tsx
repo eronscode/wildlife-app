@@ -1,5 +1,6 @@
 import { FunctionComponent, ReactNode } from 'react';
 import classNames from 'classnames';
+import { Spinner } from './Spinner';
 
 export type ButtonVariant = 'primary' | 'secondary';
 export type ButtonSize = 'sm' | 'DEFAULT';
@@ -37,7 +38,12 @@ export const Button: FunctionComponent<ButtonProps> = ({
       disabled={isButtonDisabled}
       {...props}
     >
-      {isLoading ? 'Loading...' : label}
+      <span className={classNames({ 'opacity-0': isLoading })}>{label}</span>
+      {isLoading && (
+        <div className="absolute">
+          <Spinner variant="dot-flashing" />
+        </div>
+      )}
     </button>
   );
 };
@@ -59,7 +65,7 @@ const getButtonStyles = ({
         'hover:text-white': !isDisabled,
       },
       {
-        'disabled:opacity-50 disabled:text-grey': isDisabled || isLoading,
+        'disabled:opacity-80 disabled:text-grey': isDisabled || isLoading,
       },
     ),
     secondary: classNames(

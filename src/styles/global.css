@@ -1,3 +1,165 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--loading-primary-color);
+  color: var(--loading-primary-color);
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+
+.dot-flashing::before,
+.dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--loading-primary-color);
+  color: var(--loading-primary-color);
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--loading-primary-color);
+  color: var(--loading-primary-color);
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: var(--loading-primary-color);
+  }
+  50%,
+  100% {
+    background-color: var(--loading-secondary-color);
+  }
+}
+
+.dot-spin {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: transparent;
+  box-shadow:
+    0 -18px 0 0 #f26724,
+    12.72984px -12.72984px 0 0 #f26724,
+    18px 0 0 0 #f26724,
+    12.72984px 12.72984px 0 0 rgba(152, 128, 255, 0),
+    0 18px 0 0 rgba(152, 128, 255, 0),
+    -12.72984px 12.72984px 0 0 rgba(152, 128, 255, 0),
+    -18px 0 0 0 rgba(152, 128, 255, 0),
+    -12.72984px -12.72984px 0 0 rgba(152, 128, 255, 0);
+  animation: dotSpin 1.5s infinite linear;
+}
+
+@keyframes dotSpin {
+  0%,
+  100% {
+    box-shadow:
+      0 -18px 0 0 #f26724,
+      12.72984px -12.72984px 0 0 #f26724,
+      18px 0 0 0 #f26724,
+      12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);
+  }
+  12.5% {
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.72984px -12.72984px 0 0 #f26724,
+      18px 0 0 0 #f26724,
+      12.72984px 12.72984px 0 0 #f26724,
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);
+  }
+  25% {
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 0 #f26724,
+      12.72984px 12.72984px 0 0 #f26724,
+      0 18px 0 0 #f26724,
+      -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);
+  }
+  37.5% {
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.72984px 12.72984px 0 0 #f26724,
+      0 18px 0 0 #f26724,
+      -12.72984px 12.72984px 0 0 #f26724,
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);
+  }
+  50% {
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 0 #f26724,
+      -12.72984px 12.72984px 0 0 #f26724,
+      -18px 0 0 0 #f26724,
+      -12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0);
+  }
+  62.5% {
+    box-shadow:
+      0 -18px 0 -5px rgba(152, 128, 255, 0),
+      12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px 12.72984px 0 0 #f26724,
+      -18px 0 0 0 #f26724,
+      -12.72984px -12.72984px 0 0 #f26724;
+  }
+  75% {
+    box-shadow:
+      0 -18px 0 0 #f26724,
+      12.72984px -12.72984px 0 -5px rgba(152, 128, 255, 0),
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 0 #f26724,
+      -12.72984px -12.72984px 0 0 #f26724;
+  }
+  87.5% {
+    box-shadow:
+      0 -18px 0 0 #f26724,
+      12.72984px -12.72984px 0 0 #f26724,
+      18px 0 0 -5px rgba(152, 128, 255, 0),
+      12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      0 18px 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px 12.72984px 0 -5px rgba(152, 128, 255, 0),
+      -18px 0 0 -5px rgba(152, 128, 255, 0),
+      -12.72984px -12.72984px 0 0 #f26724;
+  }
+}

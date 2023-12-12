@@ -40,7 +40,6 @@ export const SearchForm: FunctionComponent<SearchFormProps> = ({ onSearch, isLoa
         onClick={handleSearch}
         label="Search"
         isDisabled={isLoading}
-        isLoading={isLoading}
         className="rounded-none"
       />
     </div>

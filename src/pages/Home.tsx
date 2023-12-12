@@ -3,14 +3,15 @@ import { Hero } from '@/components/ui/Hero';
 import { ListingGrid } from '@/components/listings/ListingGrid';
 import { SearchForm } from '@/components/ui/SearchForm';
 import { useSearchAnimals } from '@/hooks/useSearchAnimals';
+import { Spinner } from '@/components/ui/Spinner';
 
 export const Home = () => {
   const [searchValue, setSearchValue] = useState('');
   const { searchQuery } = useSearchAnimals(searchValue);
   const { data, isLoading, isError } = searchQuery;
 
-  const noData = !isLoading && (!data || data?.length === 0);
-  const resultNotFound = !isLoading && data?.length === 0 && searchValue !== '';
+  const noData = !isLoading && !isError && (!data || data?.length === 0);
+  const resultNotFound = !isLoading && !isError && data?.length === 0 && searchValue !== '';
 
   return (
     <>
@@ -20,10 +21,16 @@ export const Home = () => {
         addon={<SearchForm onSearch={(value) => setSearchValue(value)} isLoading={isLoading} />}
       />
       <section className="container mx-auto py-10">
-        {isLoading ? <p className="text-center text-5xl mt-7">Loading...</p> : null}
+        {isLoading ? (
+          <div className="flex justify-center h-40 mt-7">
+            <Spinner variant="dot-spin" />
+          </div>
+        ) : null}
 
         {isError ? (
-          <p className="text-center text-5xl mt-7">Some error occured while trying to load data</p>
+          <p className="text-center text-red-500 text-3xl mt-7">
+            Some error occured while trying to load data
+          </p>
         ) : null}
 
         {resultNotFound ? (
@@ -43,12 +50,12 @@ export const Home = () => {
         ) : null}
 
         {data && data?.length > 0 ? (
-          <>
+          <div className="results-container">
             <div className="mb-6">
-              Showing {data.length} serarch result for <em className="font-bold">{searchValue}</em>
+              Showing {data.length} search result for <em className="font-bold">{searchValue}</em>
             </div>
             <ListingGrid listings={data} />
-          </>
+          </div>
         ) : null}
       </section>
     </>

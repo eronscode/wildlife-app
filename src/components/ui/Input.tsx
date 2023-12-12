@@ -15,6 +15,7 @@ export const Input: FunctionComponent<InputProps> = ({
   label,
   value,
   onChange,
+  onKeyDown,
   type = 'text',
   placeholder,
   disabled,
@@ -29,6 +30,7 @@ export const Input: FunctionComponent<InputProps> = ({
         id={id}
         value={value}
         onChange={onChange}
+        onKeyDown={onKeyDown}
         disabled={disabled}
         placeholder={placeholder}
         type={type}
