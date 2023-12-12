@@ -6,7 +6,7 @@ Welcome to NatureNest, a miniature project enabling users to explore and learn a
 
 ### Technical Background
 
-This project integrates the persistQueryClient plugin from React Query for fetching and storing data in local storage. For more details, refer to the documentation on persistent storage [HERE](https://tanstack.com/query/v5/docs/react/plugins/persistQueryClient). The configuration of this plugin is found in main.tsx
+This project integrates the persistQueryClient plugin from React Query for fetching and storing data in local storage. For more details, refer to the documentation on persistent storage [HERE](https://tanstack.com/query/v5/docs/react/plugins/persistQueryClient). The configuration of this plugin is found in `main.tsx` file.
 
 When searching for animals on the home page, the search term serves as a query key for the search results. This approach ensures that when the same search term is used again, the data is fetched from the cache (local storage). Clicking on an animal within the displayed search results navigates the user to the animal details page. On this page, the actual name of the animal is used as a query key. This methodology ensures that upon revisiting the page, the data is loaded from the cache. It's important to note that with each new key, an API call is made and the results are saved to the cache.
 
@@ -58,6 +58,8 @@ $ npm run dev
 $ npm build
 $ npm preview ## preview the production build
 ```
+
+**Having issues running the project due to node version?** - You can delete the package-lock.json, delete node_modules folder and re install packages. **NOTE:** Deleting package-lock is not advisable for production projects. This is just a hack to run the project since this project is a mini-project.
 
 
 ## Tests
