@@ -47,7 +47,7 @@ export const useSearchAnimals = (name = '') => {
   };
 
   const handlePreference = (type: Preferences, data: AnimalProfile, key: string) => {
-    const updatedPreference = { ...data?.preferences } ?? {};
+    const updatedPreference = { ...data?.preferences };
 
     if (
       (type === Preferences.LIKE && updatedPreference[key] === 'like') ||
