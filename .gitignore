@@ -23,5 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-test-reports/**
 .env
+
+# Tests
+test-reports/**
+cypress/videos
+cypress/screenshots
+
+build/

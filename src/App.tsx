@@ -4,6 +4,7 @@ import { AnimalDetails } from './pages/AnimalDetails';
 import { Layout } from './components/layout/Layout';
 import { Routes } from './config/routes';
 import { Favourites } from './pages/Favourites';
+import { NotFound } from './components/errors/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
         element: <Favourites />,
       },
     ],
-    // errorElement: <NotFound />,
+    errorElement: <NotFound />,
   },
 ]);
 
