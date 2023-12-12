@@ -126,31 +126,46 @@ $ npm run e2e
 ## Improvements
 
 ### Technical Improvements
-The following are some techncal things i'd if i had more time on the project:
+The following are some technical things i'd do if i had more time on the project:
 
 1. **UI Improvements:**
 
 - **Retaining search query** : At present, the search query gets cleared when navigating back to the search page from the details page. In certain scenarios, retaining the search term in the search box and displaying the results upon returning to the search page from the details view could offer a more seamless user experience. To achieve this enhancement, I'd aim to utilize URL query parameters to persist the search term value. By storing the search term within the URL, it ensures that the query remains intact even after navigating away and returning to the search page from the details view. This implementation could provide a more consistent and user-friendly search experience.
 
-- **Utilize a proper design system** - Currently the project uses custom colors, tailwind default colors and sizes for displaying UI elements. The colors utilized was coined to represent nature:
+
+- **Mobile/Tablet Responsiveness** - Making the product responsive wasn't a mojor requirement for the product but it would have been nice to have this feature.
+
+
+- **Utilize a proper design system**: Currently the project uses custom colors, tailwind default colors and sizes for displaying UI elements. The colors utilized was coined to represent nature:
 
   Primary Color: Green - Representing vegetation
+  
   Secondary Color: Yellow - Representing sunlight
 
   While the existing design system served its purpose in this mini-app, leveraging a comprehensive design system would significantly enhance the visual appeal of the application. Given more time, I would utilize tools like Figma to create prototypes of layouts, colors, and components, including their various states, before implementing the design with Tailwind CSS.
+
+- **Adding Pagination for Search Results**: If i had more time, i'd client side pagination for results more than 50 since the api doesn't support server side pagination.
+
+- **Imagess** - Images are quite important in any application as it gives more life and description to an entity. Currently the API doesn't include pictures of the animal. Maybe calling an external service based on the name of the animal to display a picture can be done.
 
 
 2. **Writing Tests** - Unfortunately there was no much time to write more unit tests and e2e test in the project. Writing test is very important as it as it helps to validate that all visible aspects of the product is functional and ready for production. If i had more time, i'd ensure all test cases are covered.
 
 
-3. **Mobile/Tablet Responsiveness** - Making the product responsive wasn't a mojor requirement for the product but it would have been nice to have this feature.
+3. **SEO** - Implementing SEO (Search Engine Optimization) is crucial to enhance visibility across search engines, ensuring that users can easily discover and access information about various animals. By optimizing content with relevant keywords, meta tags, and structured data, the app can rank higher in search results, attracting more organic traffic and increasing its online presence. I'd use the `react-helmet` as it allows for dynamic management of the document head in React applications.
 
 
-4. **Documentation** - Documentation is very important in projects as it helps others understand what has been done in the project. I'd write a very organized documentation if
-  i had more time in the project.
+4. **Documentation** - Documentation is very important in projects as it helps others understand what has been done in the project. I'd write a very organized documentation if i had more time in the project.
 
 
 5. **API connection** - Integrating with a live API enhances the application's interactivity and scalability. Presently, our data caching relies on local storage, which has a limited capacity of approximately 5MB. This limitation hinders scalability in the long term. Transitioning to a backend service for managing tasks such as adding/listing animals to/from favorites, rating, and expressing preference in liking/disliking animals offers improved scalability and maintainability.
 
 
 6. **Deployment:** Implementing CI/CD pipeline and continously deploy to a hosting server. CI/CD pipelines is important because it helps to minimize human error and maintain a consistent process for how software is released.
+
+
+### Business Improvements
+Although this is a mini app but being that i'm not just only a smart engineer but also business oriented, here are some proposed features that could elevate this application:
+
+1. Enhanced User Engagement: Implementing a rewards system to incentivize user interaction—granting free coins for actions like liking, disliking, or rating animals. Accumulated coins could be exchanged for a complimentary zoo visit, fostering continuous user engagement and loyalty to the application. This strategic feature aims to sustain user interest and interaction with the app over time.
+
