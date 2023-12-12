@@ -9,7 +9,7 @@ import { Preferences } from '@/enums';
 const searchAnimal = (name: string): Promise<AnimalProfile[]> =>
   apiClient.get(API_ENDPOINTS.SERACH_ANIMAL(name));
 
-export const useSearchAnimals = (name = '') => {
+export const useAnimalService = (name = '') => {
   const queryClient = useQueryClient();
 
   const searchQuery = useQuery({

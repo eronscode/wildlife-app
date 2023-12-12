@@ -1,9 +1,9 @@
 import { Hero } from '@/components/ui/Hero';
 import { ListingGrid } from '@/components/listings/ListingGrid';
-import { useSearchAnimals } from '@/hooks/useSearchAnimals';
+import { useAnimalService } from '@/hooks/useAnimalService';
 
 export const Favourites = () => {
-  const { getFavouriteAnimals } = useSearchAnimals();
+  const { getFavouriteAnimals } = useAnimalService();
   const favouriteAnimals = getFavouriteAnimals();
 
   const noData = !favouriteAnimals || favouriteAnimals?.length === 0;

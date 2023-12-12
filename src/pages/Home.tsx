@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Hero } from '@/components/ui/Hero';
 import { ListingGrid } from '@/components/listings/ListingGrid';
 import { SearchForm } from '@/components/ui/SearchForm';
-import { useSearchAnimals } from '@/hooks/useSearchAnimals';
+import { useAnimalService } from '@/hooks/useAnimalService';
 import { Spinner } from '@/components/ui/Spinner';
 
 export const Home = () => {
   const [searchValue, setSearchValue] = useState('');
-  const { searchQuery } = useSearchAnimals(searchValue);
+  const { searchQuery } = useAnimalService(searchValue);
   const { data, isLoading, isError } = searchQuery;
 
   const noData = !isLoading && !isError && (!data || data?.length === 0);

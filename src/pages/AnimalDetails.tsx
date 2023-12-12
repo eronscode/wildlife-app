@@ -10,7 +10,7 @@ import ThumbsDownSVG from '@/assets/thumbs-down.svg?react';
 import HeartSVG from '@/assets/heart.svg?react';
 import { Button } from '@/components/ui/Button';
 import { Routes } from '@/config/routes';
-import { useSearchAnimals } from '@/hooks/useSearchAnimals';
+import { useAnimalService } from '@/hooks/useAnimalService';
 import { Preferences } from '@/enums';
 import { stringUtils } from '@/utils/formatString';
 import { Spinner } from '@/components/ui/Spinner';
@@ -22,7 +22,7 @@ export const AnimalDetails = () => {
   const { decodeSlug, convertToTitleCase } = stringUtils;
   const name = decodeSlug(String(params?.name) ?? '');
 
-  const { searchQuery, toggleFavourites, handleRating, handlePreference } = useSearchAnimals(name);
+  const { searchQuery, toggleFavourites, handleRating, handlePreference } = useAnimalService(name);
   const { data, isLoading, isError } = searchQuery;
 
   const animalDetail = data?.find((animal) => animal.name === name);
