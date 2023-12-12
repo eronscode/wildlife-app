@@ -125,3 +125,28 @@ $ npm run e2e
 
 ## Improvements
 
+### Technical Improvements
+The following are some techncal things i'd if i had more time on the project:
+
+- **Utilize a proper design system** - Currently the project uses custom colors, tailwind default colors and sizes for displaying UI elements. The colors utilized was coined to represent nature:
+
+Primary Color: Green - Representing vegetation
+Secondary Color: Yellow - Representing sunlight
+
+While the existing design system served its purpose in this mini-app, leveraging a comprehensive design system would significantly enhance the visual appeal of the application. Given more time, I would utilize tools like Figma to create prototypes of layouts, colors, and components, including their various states, before implementing the design with Tailwind CSS.
+
+
+- **Writing Tests** - Unfortunately there was no much time to write more unit tests and e2e test in the project. Writing test is very important as it as it helps to validate that all visible aspects of the product is functional and ready for production. If i had more time, i'd ensure all test cases are covered.
+
+
+- **Mobile/Tablet Responsiveness** - Making the product responsive wasn't a mojor requirement for the product but it would have been nice to have this feature.
+
+
+- **Documentation** - Documentation is very important in projects as it helps others understand what has been done in the project. I'd write a very organized documentation if
+  i had more time in the project.
+
+
+- **API connection** - Integrating with a live API enhances the application's interactivity and scalability. Presently, our data caching relies on local storage, which has a limited capacity of approximately 5MB. This limitation hinders scalability in the long term. Transitioning to a backend service for managing tasks such as adding/listing animals to/from favorites, rating, and expressing preference in liking/disliking animals offers improved scalability and maintainability.
+
+
+- **Deployment:** Implementing CI/CD pipeline and continously deploy to a hosting server. CI/CD pipelines is important because it helps to minimize human error and maintain a consistent process for how software is released.
